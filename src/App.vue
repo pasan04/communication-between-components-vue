@@ -1,6 +1,6 @@
 <template>
     <div class="parent-component">
-      <child-component message="Component Communication in VueJs"></child-component>
+      <child-component message="Component Communication in VueJs" value-passing="1"></child-component>
     </div>
 </template>
 
