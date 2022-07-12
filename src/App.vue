@@ -1,31 +1,27 @@
 <template>
     <div class="parent-component">
       <child-component @changeMsg="setMessage" :msg="welcomeMsg"></child-component>
+      <p>{{this.selectedMsg}}</p>
     </div>
 </template>
 
 <script>
 
 export default {
-  data() {
-    return {
-      topics: [
-        {
-          id: 'G01',
-          title: 'Grade 01',
-          description: 'Cover all grade 01 topics in here'
-        },
-        {
-          id: 'G02',
-          title: 'Grade 02',
-          description: 'Cover all grade 02 topics in here'
-        }
-      ]
-    };
+  data(){
+    return{
+      selectedMsg: ''
+    }
   },
   provide(){
     return{
-      topics: this.topics
+      topics: this.topics,
+      selectMsg: this.selectMsg
+    }
+  },
+  methods:{
+    selectMsg(msg){
+      this.selectedMsg = msg
     }
   }
 }
