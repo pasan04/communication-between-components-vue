@@ -9,14 +9,24 @@
 export default {
   data() {
     return {
-      welcomeMsg: "Hello World"
+      topics: [
+        {
+          id: 'G01',
+          title: 'Grade 01',
+          description: 'Cover all grade 01 topics in here'
+        },
+        {
+          id: 'G02',
+          title: 'Grade 02',
+          description: 'Cover all grade 02 topics in here'
+        }
+      ]
     };
   },
-  methods: {
-    setMessage(msg) {
-      this.welcomeMsg = msg;
+  provide(){
+    return{
+      topics: this.topics
     }
-  },
-
+  }
 }
 </script>
